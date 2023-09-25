@@ -1,4 +1,7 @@
-﻿using Exercise3.Animals.Special_Animals;
+﻿using Exercise3.Animals;
+using Exercise3.Animals.Bird_Animals;
+using Exercise3.Animals.Regular_Animals;
+using Exercise3.Animals.Special_Animals;
 using Exercise3.InputErrors;
 
 namespace Exercise3
@@ -58,8 +61,65 @@ namespace Exercise3
             }
 
             //testing a Wolfman with parameters and his talking method
-            Wolfman wolfman = new Wolfman("Stefan", 28, 270, "Cursed", true, false, true, false);
-            wolfman.Talk();
+            //Wolfman wolfman = new Wolfman("Stefan", 28, 270, "Cursed", true, false, true, false);
+            //wolfman.Talk();
+            Console.WriteLine("I am printing Animal list now:\n");
+            List<Animal> animals = new List<Animal>();                  //creating a list of Animal objects
+            {
+                animals.Add(new Dog("Rex", 5, 25, "Dog", true, false, true, false));
+                animals.Add(new Hedgehog("Sonic", 3, 1, "Hedgehog", true, true, false, 789));
+                animals.Add(new Horse("Spirit", 7, 300, "Horse", true, false, false, "Arabian"));
+                animals.Add(new Pelican("Pelikso", 3, 6.4, "Pelican", true, true, false, true, 150));
+                animals.Add(new Swan("Svante", 2, 7, "Swan", false, true, false, true, 40));
+                animals.Add(new Wolf("Wolfie", 4, 50, "Wolf", true, true, true, true));
+                animals.Add(new Worm("Wormy", 1, 0.7, "Worm", false, true, false, "It is a decompositor"));
+                animals.Add(new Dog("Rekio", 12, 5, "Dog", true, false, true, true));
+                animals.Add(new Flamingo("Flammy", 2, 3, "Flamingo", true, true, false, true, 80));
+                animals.Add(new Wolfman("Stefan", 28, 270, "Cursed Wolfman", true, false, true, false));
+            };
+
+            foreach (var animal in animals)                             //looping through all animals in the list
+            {
+                if (animal is IPerson)                                  //if animal is a person, cast it to a person and call the talk method
+                {
+                    IPerson person = (IPerson)animal;                   //casting animal to a person
+                    person.Talk();                                      //calling the talk method
+                }
+
+            // Note: 14: 15: 16: 17: You won't directly access methods unique to Dog from a list of Animal without type casting. Need another if statement
+                if (animal is Dog dog)
+                {
+                    Console.WriteLine(dog.RandomMethod());
+                }
+
+                Console.WriteLine(animal.Stats());                      //displaying all animals stats
+                animal.DoSound();                                       //calling the dosound method for all animals
+                Console.WriteLine();                                    //adding a line between each animal
+            }
+
+
+            // Note: 9: Creating a list just for dogs. You can't add a horse to this list because of type safety in C#
+            // Note: 10: In order to add a horse to this list, you would have to change the type of the list to Animal
+            Console.WriteLine("I'm printing a test dog list now: ");
+            Console.WriteLine();
+            List<Dog> dogs = new List<Dog>();
+            {
+                dogs.Add(new Dog("Rex", 5, 7, "Dog", true, false, true, false));
+                dogs.Add(new Dog("Rekio", 12, 5, "Dog", true, false, true, true));
+                dogs.Add(new Dog("Felix", 3, 3, "Dog", true, false, true, false));
+                dogs.Add(new Dog("Max", 5, 25, "Dog", true, false, true, true));
+                dogs.Add(new Dog("Liks", 8, 2, "Dog", true, false, true, false));
+
+            };
+
+
+            //printing all dogs to console
+            foreach (var dog in dogs)
+            {
+                Console.WriteLine(dog.Stats());
+                dog.DoSound();
+                Console.WriteLine();
+            }
 
 
 

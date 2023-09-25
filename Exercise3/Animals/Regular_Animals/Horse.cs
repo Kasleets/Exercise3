@@ -11,7 +11,7 @@ namespace Exercise3.Animals.Regular_Animals
 
         public string Breed { get; set; } // unique property for this class
 
-        public Horse(string name, int age, int weight, string type, bool isMale, bool isFeral, bool isPredator, string breed) :
+        public Horse(string name, int age, double weight, string type, bool isMale, bool isFeral, bool isPredator, string breed) :
             base(name, age, weight, type, isMale, isFeral, isPredator)
         {
             Breed = breed;
@@ -20,6 +20,10 @@ namespace Exercise3.Animals.Regular_Animals
         public override void DoSound()
         {
             Console.WriteLine("Neighuhuh!");
+        }
+        public override string Stats()
+        {
+            return base.Stats() + $" {nameof(Breed)}: {Breed}";
         }
     }
 }

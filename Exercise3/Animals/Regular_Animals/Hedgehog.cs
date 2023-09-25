@@ -8,16 +8,20 @@ namespace Exercise3.Animals.Regular_Animals
 {
     public class Hedgehog : Animal
     {
-        public string? Spikes { get; set; } // unique property for this class
-        public Hedgehog(string name, int age, int weight, string type, bool isMale, bool isFeral, bool isPredator, string? Spikes) :
+        public int Spikes { get; set; } // unique property for this class
+        public Hedgehog(string name, int age, double weight, string type, bool isMale, bool isFeral, bool isPredator, int spikes) :
             base(name, age, weight, type, isMale, isFeral, isPredator)
         {
-            Spikes = "It has spikes!";
+            Spikes = spikes;
         }
 
         public override void DoSound()
         {
             Console.WriteLine("Squeak!");
+        }
+        public override string Stats()
+        {
+            return base.Stats() + $" {nameof(Spikes)}: {Spikes} individual spikes";
         }
     }
 }

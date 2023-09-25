@@ -9,7 +9,7 @@ namespace Exercise3.Animals.Regular_Animals
     public class Dog : Animal
     {
         public bool IsWorking { get; set; } // unique property for this class
-        public Dog(string name, int age, int weight, string type, bool isMale, bool isFeral, bool isPredator, bool isWorking) :
+        public Dog(string name, int age, double weight, string type, bool isMale, bool isFeral, bool isPredator, bool isWorking) :
             base(name, age, weight, type, isMale, isFeral, isPredator)
         {
             IsWorking = isWorking;
@@ -17,6 +17,15 @@ namespace Exercise3.Animals.Regular_Animals
         public override void DoSound()
         {
             Console.WriteLine("Woof woof!");
+        }
+        public override string Stats()
+        {
+            return base.Stats() + $" {nameof(IsWorking)}: {IsWorking}";
+        }
+
+        public string RandomMethod()
+        {
+            return "This is so much random method for doggo!";
         }
     }
 }

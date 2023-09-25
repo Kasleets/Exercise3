@@ -11,7 +11,7 @@ namespace Exercise3.Animals.Regular_Animals
     {
         public bool IsHostile { get; set; } // unique property for this class
 
-        public Wolf(string name, int age, int weight, string type, bool isMale, bool isFeral, bool isPredator, bool ishostile) :
+        public Wolf(string name, int age, double weight, string type, bool isMale, bool isFeral, bool isPredator, bool ishostile) :
         base(name, age, weight, type, isMale, isFeral, isPredator)
         {
             IsHostile = ishostile;
@@ -20,6 +20,10 @@ namespace Exercise3.Animals.Regular_Animals
         public override void DoSound()
         {
             Console.WriteLine("Hooooooowl!");
+        }
+        public override string Stats()
+        {
+            return base.Stats() + $" {nameof(IsHostile)}: {IsHostile}";
         }
     }
 

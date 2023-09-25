@@ -11,7 +11,7 @@ namespace Exercise3.Animals
     {
         public bool Fly { get; set; } // unique property for Bird
 
-        public Bird(string name, int age, int weight, string type, bool isMale, bool isFeral, bool isPredator, bool fly) :
+        public Bird(string name, int age, double weight, string type, bool isMale, bool isFeral, bool isPredator, bool fly) :
                     base(name, age, weight, type, isMale, isFeral, isPredator) 
         {
             Fly = fly;
@@ -20,6 +20,10 @@ namespace Exercise3.Animals
         public override void DoSound() // override DoSound() from Animal
         {
             Console.WriteLine("Chirp chirp!");      // unique sound for Bird
+        }
+        public override string Stats()
+        {
+            return base.Stats() + $" {nameof(Fly)}: {Fly}";
         }
     }
 }
