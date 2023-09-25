@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Exercise3.Animals
 {
     // Note: 14: if all animals needs a new attribute, we would add it to the Animal class
-    public abstract class Animal
+    public abstract class Animal // abstract class, can't be instantiated, only inherited from
     {
         public string Name { get; set; }
         public int Age { get; set; }
@@ -17,9 +17,9 @@ namespace Exercise3.Animals
         public bool IsFeral { get; set; }
         public bool IsPredator { get; set; }
 
-        public abstract void DoSound();
+        public abstract void DoSound(); // a Method that all animals have in common, doing an override for each animal
     
-        public Animal(string name, int age, int weight, string type, bool isMale, bool isFeral, bool isPredator)
+        public Animal(string name, int age, int weight, string type, bool isMale, bool isFeral, bool isPredator) // constructor for all animals
         {
             Name = name;
             Age = age;

@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercise3.Animals
+namespace Exercise3.Animals.Regular_Animals
 {
     public class Hedgehog : Animal
-
     {
-        public string? Spikes { get; set; }
-        public Hedgehog(string name, int age, int weight, string type, bool isMale, bool isFeral, bool isPredator, string? Spikes) : 
+        public string? Spikes { get; set; } // unique property for this class
+        public Hedgehog(string name, int age, int weight, string type, bool isMale, bool isFeral, bool isPredator, string? Spikes) :
             base(name, age, weight, type, isMale, isFeral, isPredator)
         {
             Spikes = "It has spikes!";

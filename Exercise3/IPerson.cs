@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercise3
 {
-    public interface IPerson
+    public interface IPerson // Interface for the Person class and wolfman subclass
     {
         void Talk();
     }

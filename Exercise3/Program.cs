@@ -1,4 +1,4 @@
-﻿using Exercise3.Animals;
+﻿using Exercise3.Animals.Special_Animals;
 using Exercise3.InputErrors;
 
 namespace Exercise3
