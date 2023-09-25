@@ -1,8 +1,9 @@
-﻿using Exercise3.InputErrors;
+﻿using Exercise3.Animals;
+using Exercise3.InputErrors;
 
 namespace Exercise3
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)                         //creating a list of UserError objects and testing
         {
@@ -55,6 +56,11 @@ namespace Exercise3
             {
                 Console.WriteLine(userError.UEMessage());
             }
+
+            //testing a Wolfman with parameters and his talking method
+            Wolfman wolfman = new Wolfman("Stefan", 28, 270, "Cursed", true, false, true, false);
+            wolfman.Talk();
+
 
 
 
