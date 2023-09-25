@@ -1,8 +1,10 @@
-﻿namespace Exercise3
+﻿using Exercise3.InputErrors;
+
+namespace Exercise3
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args)                         //creating a list of UserError objects and testing
         {
             Console.WriteLine("Hello, World!");
 
@@ -19,10 +21,7 @@
             Person Monika = personHandler.CreatePerson(27, "Monika", "Touric", 172.7, 52);
             personHandler.SetWeight(Monika, 57.4);
             Console.WriteLine($"Created a person: {Monika.FName} {Monika.LName} of Age: {Monika.Age} of Height: {Monika.Height} of Weight: {Monika.Weight}");
-            Console.WriteLine($"Updated Weight: {Monika.Weight}");
-
-
-
+            Console.WriteLine($"Updated Weight: {Monika.Weight}\n");
 
             //try
             //{
@@ -32,6 +31,34 @@
             //{
             //    Console.WriteLine("Error: " + ex.Message);
             //}
+
+            List<UserError> userErrors = new List<UserError>();                 //creating a list of UserError objects
+            {
+                new NumericInputError();
+                new TextInputError();
+                new EmptyInputError();
+                new NullInputError();
+                new SpecialCharacterInputError();
+
+
+            };
+
+            //// Testing all input errors if they display correctly
+            //userErrors.Add(new NumericInputError());
+            //userErrors.Add(new TextInputError());
+            //userErrors.Add(new EmptyInputError());
+            //userErrors.Add(new NullInputError());
+            //userErrors.Add(new SpecialCharacterInputError());
+
+            //displaying all usererrors to user
+            foreach (UserError userError in userErrors)
+            {
+                Console.WriteLine(userError.UEMessage());
+            }
+
+
+
+
         }
     }
 }
