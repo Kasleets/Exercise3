@@ -8,8 +8,8 @@ namespace Exercise3.Animals.Bird_Animals
 {
     public class Pelican : Bird
     {
-        public int BeakVolume { get; set; }
-        public Pelican(string name, int age, int weight, string type, bool isMale, bool isFeral, bool isPredator, bool fly, int beakVolume) :
+        public double BeakVolume { get; set; } // unique property for this class
+        public Pelican(string name, int age, int weight, string type, bool isMale, bool isFeral, bool isPredator, bool fly, double beakVolume) :
                         base(name, age, weight, type, isMale, isFeral, isPredator, fly)
         {
             BeakVolume = beakVolume;
