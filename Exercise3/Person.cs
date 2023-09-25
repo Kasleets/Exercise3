@@ -10,8 +10,8 @@ namespace Exercise3
     internal class Person
     {
         private int age;
-        private string fName;
-        private string lName;
+        private string fName = string.Empty;
+        private string lName = string.Empty;
         private double height;
         private double weight;
 

@@ -10,6 +10,8 @@ namespace Exercise3
     {
         static void Main(string[] args)                         //creating a list of UserError objects and testing
         {
+            #region Assignment part 3.1 Incapsulation
+
             Console.WriteLine("Hello, World!");
 
             PersonHandler personHandler = new PersonHandler();
@@ -19,7 +21,7 @@ namespace Exercise3
 
             personHandler.SetAge(Stefan, 33);
             Console.WriteLine($"Updated Age: {Stefan.Age}");
-            Console.WriteLine($"Created a person: {Stefan.FName} {Stefan.LName} of Age: {Stefan.Age} of Height: {Stefan.Height} of Weight: {Stefan.Weight}\n");
+            Console.WriteLine($"Created a person: {Stefan.FName} {Stefan.LName} of Age: {Stefan.Age} of Height: {Stefan.Height} of Weight: {Stefan.Weight}");
 
 
             Person Monika = personHandler.CreatePerson(27, "Monika", "Touric", 172.7, 52);
@@ -35,6 +37,10 @@ namespace Exercise3
             //{
             //    Console.WriteLine("Error: " + ex.Message);
             //}
+            #endregion
+
+            
+            #region Assignment part 3.2 Polymorphism Testing all input errors if they display correctly and their implementation
 
             List<UserError> userErrors = new List<UserError>();                 //creating a list of UserError objects
             {
@@ -60,10 +66,17 @@ namespace Exercise3
                 Console.WriteLine(userError.UEMessage());
             }
 
+
+
+
             //testing a Wolfman with parameters and his talking method
             //Wolfman wolfman = new Wolfman("Stefan", 28, 270, "Cursed", true, false, true, false);
             //wolfman.Talk();
-            Console.WriteLine("I am printing Animal list now:\n");
+            #endregion
+
+            #region Assignment part 3.3 Inheritance and 3.4 More Polymorphism
+
+            Console.WriteLine("\nI am printing Animal list now:\n");
             List<Animal> animals = new List<Animal>();                  //creating a list of Animal objects
             {
                 animals.Add(new Dog("Rex", 5, 25, "Dog", true, false, true, false));
@@ -100,7 +113,7 @@ namespace Exercise3
 
             // Note: 9: Creating a list just for dogs. You can't add a horse to this list because of type safety in C#
             // Note: 10: In order to add a horse to this list, you would have to change the type of the list to Animal
-            Console.WriteLine("I'm printing a test dog list now: ");
+            Console.WriteLine("\nI'm printing a test dog list now: \n");
             Console.WriteLine();
             List<Dog> dogs = new List<Dog>();
             {
@@ -121,7 +134,7 @@ namespace Exercise3
                 Console.WriteLine();
             }
 
-
+            #endregion
 
 
 
